@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1300">
+  <!-- Styles and gradients -->
+  <defs>
+    <!-- Gradients for main flow -->
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4568DC" />
+      <stop offset="100%" stop-color="#6FB1FC" />
+    </linearGradient>
+    
+    <!-- Gradient for subgraph 1 -->
+    <linearGradient id="sub1Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#56ab2f" />
+      <stop offset="100%" stop-color="#a8e063" />
+    </linearGradient>
+    
+    <!-- Gradient for subgraph 2 -->
+    <linearGradient id="sub2Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF8008" />
+      <stop offset="100%" stop-color="#FFC837" />
+    </linearGradient>
+    
+    <!-- Gradient for subgraph 3 -->
+    <linearGradient id="sub3Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#834d9b" />
+      <stop offset="100%" stop-color="#d04ed6" />
+    </linearGradient>
+    
+    <!-- Arrow marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1100" height="1300" fill="#f8f9fa" />
+  
+  <!-- Main Flow -->
+  <g id="mainFlow" font-family="Arial, sans-serif">
+    <!-- Nodes -->
+    <rect x="400" y="50" width="300" height="60" rx="10" ry="10" fill="url(#mainGradient)" stroke="#2a4365" stroke-width="2" />
+    <text x="550" y="85" text-anchor="middle" fill="white" font-weight="bold">开始: 用户Prompt</text>
+    
+    <path d="M500,150 L600,150 L550,210 Z" fill="#4299e1" stroke="#2c5282" stroke-width="2" />
+    <text x="550" y="175" text-anchor="middle" fill="white" font-weight="bold">搜索选项</text>
+    
+    <rect x="200" y="250" width="250" height="60" rx="10" ry="10" fill="#4299e1" stroke="#2c5282" stroke-width="2" />
+    <text x="325" y="285" text-anchor="middle" fill="white" font-weight="bold">创建异步任务: Bing Search</text>
+    
+    <rect x="600" y="250" width="250" height="70" rx="10" ry="10" fill="#4299e1" stroke="#2c5282" stroke-width="2" />
+    <text x="730" y="285" text-anchor="middle" fill="white" font-weight="bold">创建异步任务: Neo4j Rag</text>
+
+    
+    <rect x="400" y="350" width="250" height="60" rx="10" ry="10" fill="#4299e1" stroke="#2c5282" stroke-width="2" />
+    <text x="525" y="385" text-anchor="middle" fill="white" font-weight="bold">等待异步任务完成</text>
+    
+    <path d="M475,450 L575,450 L525,510 Z" fill="#4299e1" stroke="#2c5282" stroke-width="2" />
+    <text x="525" y="475" text-anchor="middle" fill="white" font-weight="bold">解析结果</text>
+    
+    <rect x="200" y="550" width="250" height="60" rx="10" ry="10" fill="#4299e1" stroke="#2c5282" stroke-width="2" />
+    <text x="325" y="585" text-anchor="middle" fill="white" font-weight="bold">提取互联网检索结果构成语料</text>
+    
+    <rect x="580" y="550" width="320" height="70" rx="10" ry="10" fill="#4299e1" stroke="#2c5282" stroke-width="2" />
+    <text x="740" y="575" text-anchor="middle" fill="white" font-size="14" font-weight="bold">提取Prompt相关知识图谱语料</text>
+    <text x="740" y="600" text-anchor="middle" fill="white" font-size="14" font-weight="bold">提取相关节点结构</text>
+    
+    <rect x="400" y="650" width="250" height="60" rx="10" ry="10" fill="#4299e1" stroke="#2c5282" stroke-width="2" />
+    <text x="525" y="685" text-anchor="middle" fill="white" font-weight="bold">生成LLM_PROMPT</text>
+    
+    <rect x="400" y="750" width="250" height="60" rx="10" ry="10" fill="url(#mainGradient)" stroke="#2a4365" stroke-width="2" />
+    <text x="525" y="785" text-anchor="middle" fill="white" font-weight="bold">返回最终Prompt</text>
+    
+    <!-- Connecting Lines -->
+    <line x1="550" y1="110" x2="550" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="550" y1="210" x2="325" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+
+    
+    <line x1="550" y1="210" x2="740" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <line x1="325" y1="310" x2="325" y2="380" stroke="#333" stroke-width="2" />
+    <line x1="325" y1="380" x2="400" y2="380" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <line x1="740" y1="320" x2="740" y2="380" stroke="#333" stroke-width="2" />
+    <line x1="740" y1="380" x2="650" y2="380" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <line x1="525" y1="410" x2="525" y2="450" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <line x1="525" y1="510" x2="325" y2="550" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+    <text x="380" y="535" text-anchor="middle" fill="#333" font-size="14">互联网检索结果</text>
+    
+    <line x1="525" y1="510" x2="740" y2="550" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+    <text x="670" y="535" text-anchor="middle" fill="#333" font-size="14">知识图谱查询结果</text>
+    
+    <line x1="325" y1="610" x2="325" y2="680" stroke="#333" stroke-width="2" />
+    <line x1="325" y1="680" x2="400" y2="680" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <line x1="740" y1="620" x2="740" y2="680" stroke="#333" stroke-width="2" />
+    <line x1="740" y1="680" x2="650" y2="680" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <line x1="525" y1="710" x2="525" y2="750" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  </g>
+  
+  <!-- Subgraph 1: ragFromNeo4j -->
+  <g id="subgraph1" transform="translate(80, 850)">
+    <rect x="0" y="0" width="320" height="340" rx="10" ry="10" fill="#efffef" stroke="#4c9e4c" stroke-width="2" />
+    <text x="160" y="25" text-anchor="middle" fill="#2f6e2f" font-weight="bold" font-family="Arial, sans-serif">ragFromNeo4j处理流程</text>
+    
+    <rect x="20" y="40" width="280" height="40" rx="8" ry="8" fill="url(#sub1Gradient)" stroke="#2f6e2f" stroke-width="2" />
+    <text x="160" y="65" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">ragFromNeo4j</text>
+    
+    <rect x="20" y="100" width="280" height="40" rx="8" ry="8" fill="url(#sub1Gradient)" stroke="#2f6e2f" stroke-width="2" />
+    <text x="160" y="125" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">调用rerank_and_extract_conceptNode</text>
+    
+    <rect x="20" y="160" width="280" height="40" rx="8" ry="8" fill="url(#sub1Gradient)" stroke="#2f6e2f" stroke-width="2" />
+    <text x="160" y="185" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">提取相关概念名称</text>
+    
+    <rect x="20" y="220" width="280" height="40" rx="8" ry="8" fill="url(#sub1Gradient)" stroke="#2f6e2f" stroke-width="2" />
+    <text x="160" y="245" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">调用retrieve_knowledge_graph</text>
+    
+    <rect x="20" y="280" width="280" height="40" rx="8" ry="8" fill="url(#sub1Gradient)" stroke="#2f6e2f" stroke-width="2" />
+    <text x="160" y="305" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">从节点值构建语料库</text>
+    
+    <rect x="20" y="340" width="280" height="40" rx="8" ry="8" fill="url(#sub1Gradient)" stroke="#2f6e2f" stroke-width="2" />
+    <text x="160" y="365" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">返回语料和节点/链接</text>
+    
+    <!-- Connecting lines -->
+    <line x1="160" y1="80" x2="160" y2="100" stroke="#2f6e2f" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="160" y1="140" x2="160" y2="160" stroke="#2f6e2f" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="160" y1="200" x2="160" y2="220" stroke="#2f6e2f" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="160" y1="260" x2="160" y2="280" stroke="#2f6e2f" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="160" y1="320" x2="160" y2="340" stroke="#2f6e2f" stroke-width="2" marker-end="url(#arrowhead)" />
+  </g>
+  
+  <!-- Subgraph 2: retrieve_knowledge_graph -->
+  <g id="subgraph2" transform="translate(420, 850)">
+    <rect x="0" y="0" width="320" height="580" rx="10" ry="10" fill="#fff9e6" stroke="#b5831c" stroke-width="2" />
+    <text x="160" y="25" text-anchor="middle" fill="#8c6514" font-weight="bold" font-family="Arial, sans-serif">retrieve_knowledge_graph处理流程</text>
+    
+    <rect x="20" y="40" width="280" height="40" rx="8" ry="8" fill="url(#sub2Gradient)" stroke="#8c6514" stroke-width="2" />
+    <text x="160" y="65" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">retrieve_knowledge_graph</text>
+    
+    <rect x="20" y="100" width="280" height="40" rx="8" ry="8" fill="url(#sub2Gradient)" stroke="#8c6514" stroke-width="2" />
+    <text x="160" y="117" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif" font-size="12">初始化节点、链接和</text>
+    <text x="160" y="135" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif" font-size="12">节点ID映射</text>
+    
+    <rect x="20" y="160" width="280" height="40" rx="8" ry="8" fill="url(#sub2Gradient)" stroke="#8c6514" stroke-width="2" />
+    <text x="160" y="185" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">执行5个并行Neo4j查询</text>
+    
+    <rect x="20" y="220" width="280" height="40" rx="8" ry="8" fill="url(#sub2Gradient)" stroke="#8c6514" stroke-width="2" />
+    <text x="160" y="245" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">处理概念节点</text>
+    
+    <rect x="20" y="280" width="280" height="40" rx="8" ry="8" fill="url(#sub2Gradient)" stroke="#8c6514" stroke-width="2" />
+    <text x="160" y="305" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">处理父节点</text>
+    
+    <rect x="20" y="340" width="280" height="40" rx="8" ry="8" fill="url(#sub2Gradient)" stroke="#8c6514" stroke-width="2" />
+    <text x="160" y="365" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">处理同级概念</text>
+    
+    <rect x="20" y="400" width="280" height="40" rx="8" ry="8" fill="url(#sub2Gradient)" stroke="#8c6514" stroke-width="2" />
+    <text x="160" y="425" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">处理主题节点</text>
+    
+    <rect x="20" y="460" width="280" height="40" rx="8" ry="8" fill="url(#sub2Gradient)" stroke="#8c6514" stroke-width="2" />
+    <text x="160" y="485" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">处理视频节点</text>
+    
+    <rect x="20" y="520" width="280" height="40" rx="8" ry="8" fill="url(#sub2Gradient)" stroke="#8c6514" stroke-width="2" />
+    <text x="160" y="545" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">返回节点和链接</text>
+    
+    <!-- Connecting lines -->
+    <line x1="160" y1="80" x2="160" y2="100" stroke="#8c6514" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="160" y1="140" x2="160" y2="160" stroke="#8c6514" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="160" y1="200" x2="160" y2="220" stroke="#8c6514" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="160" y1="260" x2="160" y2="280" stroke="#8c6514" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="160" y1="320" x2="160" y2="340" stroke="#8c6514" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="160" y1="380" x2="160" y2="400" stroke="#8c6514" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="160" y1="440" x2="160" y2="460" stroke="#8c6514" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="160" y1="500" x2="160" y2="520" stroke="#8c6514" stroke-width="2" marker-end="url(#arrowhead)" />
+  </g>
+  
+  <!-- Subgraph 3: rerank_and_extract_conceptNode -->
+  <g id="subgraph3" transform="translate(760, 850)">
+    <rect x="0" y="0" width="320" height="280" rx="10" ry="10" fill="#f7e6ff" stroke="#663399" stroke-width="2" />
+    <text x="160" y="25" text-anchor="middle" fill="#502673" font-weight="bold" font-family="Arial, sans-serif">rerank_and_extract_conceptNode处理流程</text>
+    
+    <rect x="20" y="40" width="280" height="40" rx="8" ry="8" fill="url(#sub3Gradient)" stroke="#502673" stroke-width="2" />
+    <text x="160" y="65" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">rerank_and_extract_conceptNode</text>
+    
+    <rect x="20" y="100" width="280" height="40" rx="8" ry="8" fill="url(#sub3Gradient)" stroke="#502673" stroke-width="2" />
+    <text x="160" y="117" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif" font-size="12">调用RerankerCompressor</text>
+    <text x="160" y="135" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif" font-size="12">.base_text_rerank</text>
+    
+    <rect x="20" y="160" width="280" height="40" rx="8" ry="8" fill="url(#sub3Gradient)" stroke="#502673" stroke-width="2" />
+    <text x="160" y="185" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">根据相似度阈值过滤</text>
+    
+    <rect x="20" y="220" width="280" height="40" rx="8" ry="8" fill="url(#sub3Gradient)" stroke="#502673" stroke-width="2" />
+    <text x="160" y="237" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif" font-size="12">使用正则表达式</text>
+    <text x="160" y="255" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif" font-size="12">提取概念名称</text>
+    
+    <rect x="20" y="280" width="280" height="40" rx="8" ry="8" fill="url(#sub3Gradient)" stroke="#502673" stroke-width="2" />
+    <text x="160" y="305" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial, sans-serif">返回提取的概念名称</text>
+    
+    <!-- Connecting lines -->
+    <line x1="160" y1="80" x2="160" y2="100" stroke="#502673" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="160" y1="140" x2="160" y2="160" stroke="#502673" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="160" y1="200" x2="160" y2="220" stroke="#502673" stroke-width="2" marker-end="url(#arrowhead)" />
+    <line x1="160" y1="260" x2="160" y2="280" stroke="#502673" stroke-width="2" marker-end="url(#arrowhead)" />
+  </g>
+  
+  <!-- Title -->
+  <text x="550" y="30" text-anchor="middle" fill="#1a365d" font-size="24" font-weight="bold" font-family="Arial, sans-serif">知识增强问答算法流程图</text>
+</svg>

@@ -1,0 +1,202 @@
+<mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    
+    <!-- Title -->
+    <mxCell id="2" value="Temporal Graph Neural Network for User Intent Evolution Modeling" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="150" y="30" width="550" height="30" as="geometry" />
+    </mxCell>
+    
+    <!-- Main diagram components -->
+    <!-- Input section -->
+    <mxCell id="3" value="User-Intent-Time&lt;br&gt;Triplets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6e6fa;strokeColor=#9370db;fontSize=14;" vertex="1" parent="1">
+      <mxGeometry x="60" y="120" width="140" height="70" as="geometry" />
+    </mxCell>
+    
+    <!-- Temporal Graph Structure -->
+    <mxCell id="4" value="Temporal Graph Structure&lt;br&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;(Nodes: Intent Instances)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1e7ff;strokeColor=#4682b4;fontSize=14;" vertex="1" parent="1">
+      <mxGeometry x="260" y="120" width="180" height="70" as="geometry" />
+    </mxCell>
+    
+    <!-- Arrow 1 -->
+    <mxCell id="5" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3" target="4">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="400" y="410" as="sourcePoint" />
+        <mxPoint x="450" y="360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    
+    <!-- Time-Modulated Attention -->
+    <mxCell id="6" value="Time-Modulated Attention Mechanism&lt;br&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;$$\alpha_{uv}^{(t)} = \text{softmax}(\frac{h_u^{(t)} \cdot h_v^{(t)}}{\sqrt{d}} \cdot \exp(-\delta t_{uv}))$$&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe7c8;strokeColor=#ff8c00;fontSize=14;" vertex="1" parent="1">
+      <mxGeometry x="500" y="110" width="280" height="90" as="geometry" />
+    </mxCell>
+    
+    <!-- Arrow 2 -->
+    <mxCell id="7" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="4" target="6">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="400" y="410" as="sourcePoint" />
+        <mxPoint x="450" y="360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    
+    <!-- Node State Update -->
+    <mxCell id="8" value="Node State Update&lt;br&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;$$h_v^{(t+1)} = \sigma(\sum_{u \in N(v)} \alpha_{uv}^{(t)} \cdot W \cdot h_u^{(t)})$$&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d0f0c0;strokeColor=#2e8b57;fontSize=14;" vertex="1" parent="1">
+      <mxGeometry x="500" y="260" width="280" height="90" as="geometry" />
+    </mxCell>
+    
+    <!-- Arrow 3 -->
+    <mxCell id="9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6" target="8">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="400" y="410" as="sourcePoint" />
+        <mxPoint x="450" y="360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    
+    <!-- Intent Representation Learning -->
+    <mxCell id="10" value="Time-Aware Intent Representation&lt;br&gt;(Dynamic Semantic Trajectory Modeling)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e1ff;strokeColor=#0066cc;fontSize=14;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="345" y="400" width="350" height="70" as="geometry" />
+    </mxCell>
+    
+    <!-- Arrow 4 -->
+    <mxCell id="11" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="8" target="10">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="400" y="410" as="sourcePoint" />
+        <mxPoint x="450" y="360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    
+    <!-- Graph visualization -->
+    <mxCell id="12" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;" vertex="1" parent="1">
+      <mxGeometry x="90" y="240" width="170" height="170" as="geometry" />
+    </mxCell>
+    
+    <mxCell id="13" value="Temporal Graph" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="125" y="220" width="100" height="30" as="geometry" />
+    </mxCell>
+    
+    <!-- Intent nodes in graph -->
+    <mxCell id="14" value="I₁" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#a7c7e7;strokeColor=#4682b4;" vertex="1" parent="1">
+      <mxGeometry x="110" y="260" width="30" height="30" as="geometry" />
+    </mxCell>
+    
+    <mxCell id="15" value="I₂" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#a7c7e7;strokeColor=#4682b4;" vertex="1" parent="1">
+      <mxGeometry x="180" y="280" width="30" height="30" as="geometry" />
+    </mxCell>
+    
+    <mxCell id="16" value="I₃" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#a7c7e7;strokeColor=#4682b4;" vertex="1" parent="1">
+      <mxGeometry x="210" y="340" width="30" height="30" as="geometry" />
+    </mxCell>
+    
+    <mxCell id="17" value="I₄" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#a7c7e7;strokeColor=#4682b4;" vertex="1" parent="1">
+      <mxGeometry x="130" y="370" width="30" height="30" as="geometry" />
+    </mxCell>
+    
+    <!-- Edges with time weights -->
+    <mxCell id="18" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="14" target="15">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="400" y="410" as="sourcePoint" />
+        <mxPoint x="450" y="360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    
+    <mxCell id="19" value="δt₁₂" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="145" y="260" width="40" height="20" as="geometry" />
+    </mxCell>
+    
+    <mxCell id="20" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="15" target="16">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="400" y="410" as="sourcePoint" />
+        <mxPoint x="450" y="360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    
+    <mxCell id="21" value="δt₂₃" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="210" y="310" width="40" height="20" as="geometry" />
+    </mxCell>
+    
+    <mxCell id="22" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="16" target="17">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="400" y="410" as="sourcePoint" />
+        <mxPoint x="450" y="360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    
+    <mxCell id="23" value="δt₃₄" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="170" y="350" width="40" height="20" as="geometry" />
+    </mxCell>
+    
+    <!-- Arrow from graph to attention -->
+    <mxCell id="24" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="12" target="4">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="400" y="410" as="sourcePoint" />
+        <mxPoint x="450" y="360" as="targetPoint" />
+        <Array as="points">
+          <mxPoint x="240" y="325" />
+          <mxPoint x="240" y="173" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    
+    <!-- Application scenarios -->
+    <mxCell id="25" value="Navigation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0e68c;strokeColor=#daa520;" vertex="1" parent="1">
+      <mxGeometry x="270" y="510" width="120" height="40" as="geometry" />
+    </mxCell>
+    
+    <mxCell id="26" value="Energy Control" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0e68c;strokeColor=#daa520;" vertex="1" parent="1">
+      <mxGeometry x="410" y="510" width="120" height="40" as="geometry" />
+    </mxCell>
+    
+    <mxCell id="27" value="Parking Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0e68c;strokeColor=#daa520;" vertex="1" parent="1">
+      <mxGeometry x="550" y="510" width="120" height="40" as="geometry" />
+    </mxCell>
+    
+    <!-- Arrows to applications -->
+    <mxCell id="28" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="10" target="25">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="400" y="410" as="sourcePoint" />
+        <mxPoint x="450" y="360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    
+    <mxCell id="29" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="10" target="26">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="400" y="410" as="sourcePoint" />
+        <mxPoint x="450" y="360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    
+    <mxCell id="30" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="10" target="27">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="400" y="410" as="sourcePoint" />
+        <mxPoint x="450" y="360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    
+    <!-- Title for application scenarios -->
+    <mxCell id="31" value="User Intent Examples in Intelligent Connected Vehicles" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=2" vertex="1" parent="1">
+      <mxGeometry x="270" y="560" width="400" height="30" as="geometry" />
+    </mxCell>
+    
+    <!-- Arrow from TE to Node update -->
+    <mxCell id="32" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="4" target="8">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="400" y="410" as="sourcePoint" />
+        <mxPoint x="450" y="360" as="targetPoint" />
+        <Array as="points">
+          <mxPoint x="350" y="305" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    
+    <!-- Mathematical explanation -->
+    <mxCell id="33" value="&lt;b&gt;Key Model Properties:&lt;/b&gt;&lt;br&gt;1. Time decay function captures temporal dependencies&lt;br&gt;2. Attention mechanism balances semantic similarity with time effects&lt;br&gt;3. Node updates incorporate neighborhood influence weighted by time&lt;br&gt;4. Captures intent evolution patterns in semantic space" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=10;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+      <mxGeometry x="90" y="510" width="170" height="120" as="geometry" />
+    </mxCell>
+    
+    <!-- Model name block -->
+    <mxCell id="34" value="TGNN-IEM&lt;br&gt;(Temporal Graph Neural Network for Intent Evolution Modeling)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=3" vertex="1" parent="1">
+      <mxGeometry x="270" y="70" width="400" height="20" as="geometry" />
+    </mxCell>
+  </root>
+</mxGraphModel>

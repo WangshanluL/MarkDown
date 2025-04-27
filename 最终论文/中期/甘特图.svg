@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- 背景和标题 -->
+  <rect width="800" height="400" fill="#f9f9f9"/>
+  <text x="400" y="30" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">项目进度甘特图</text>
+  
+  <!-- 水平时间刻度 -->
+  <line x1="200" y1="60" x2="750" y2="60" stroke="#333" stroke-width="2"/>
+  <!-- 月份标签 -->
+  <text x="220" y="50" font-family="Arial" font-size="12" text-anchor="middle">11月</text>
+  <text x="280" y="50" font-family="Arial" font-size="12" text-anchor="middle">12月</text>
+  <text x="340" y="50" font-family="Arial" font-size="12" text-anchor="middle">1月</text>
+  <text x="400" y="50" font-family="Arial" font-size="12" text-anchor="middle">2月</text>
+  <text x="460" y="50" font-family="Arial" font-size="12" text-anchor="middle">3月</text>
+  <text x="520" y="50" font-family="Arial" font-size="12" text-anchor="middle">4月</text>
+  <text x="580" y="50" font-family="Arial" font-size="12" text-anchor="middle">5月</text>
+  
+  <!-- 垂直月份分隔线 -->
+  <line x1="250" y1="45" x2="250" y2="350" stroke="#ddd" stroke-width="1"/>
+  <line x1="310" y1="45" x2="310" y2="350" stroke="#ddd" stroke-width="1"/>
+  <line x1="370" y1="45" x2="370" y2="350" stroke="#ddd" stroke-width="1"/>
+  <line x1="430" y1="45" x2="430" y2="350" stroke="#ddd" stroke-width="1"/>
+  <line x1="490" y1="45" x2="490" y2="350" stroke="#ddd" stroke-width="1"/>
+  <line x1="550" y1="45" x2="550" y2="350" stroke="#ddd" stroke-width="1"/>
+  <line x1="610" y1="45" x2="610" y2="350" stroke="#ddd" stroke-width="1"/>
+  
+  <!-- 任务列表 -->
+  <g font-family="Arial" font-size="12">
+    <text x="20" y="90" text-anchor="start">文献收集、开题报告准备</text>
+    <text x="20" y="130" text-anchor="start">前端Vue、后端FastApi环境搭建</text>
+    <text x="20" y="170" text-anchor="start">操作系统知识图谱构建</text>
+    <text x="20" y="210" text-anchor="start">知识增强核心问答功能实现</text>
+    <text x="20" y="250" text-anchor="start">聊天记录入库、知识可视化</text>
+    <text x="20" y="290" text-anchor="start">准备中期汇报材料及答辩</text>
+    <text x="20" y="330" text-anchor="start">完善系统其他功能</text>
+    <text x="20" y="370" text-anchor="start">系统测试与部署，论文撰写</text>
+  </g>
+  
+  <!-- 时间条 -->
+  <!-- 11月10日-12月30日：文献收集、开题报告准备 -->
+  <rect x="215" y="75" width="95" height="20" rx="3" ry="3" fill="#4c78a8" opacity="0.8"/>
+  
+  <!-- 1月3日-2月5日：前端Vue、后端FastApi实验环境搭建 -->
+  <rect x="325" y="115" width="70" height="20" rx="3" ry="3" fill="#f58518" opacity="0.8"/>
+  
+  <!-- 2月6日-2月19日：操作系统知识图谱构建 -->
+  <rect x="395" y="155" width="30" height="20" rx="3" ry="3" fill="#e45756" opacity="0.8"/>
+  
+  <!-- 2月20日-3月10日：知识增强核心问答功能实现 -->
+  <rect x="425" y="195" width="50" height="20" rx="3" ry="3" fill="#72b7b2" opacity="0.8"/>
+  
+  <!-- 3月11日-3月30日：聊天记录入库、知识可视化 -->
+  <rect x="475" y="235" width="45" height="20" rx="3" ry="3" fill="#54a24b" opacity="0.8"/>
+  
+  <!-- 4月1日-4月2日：准备中期汇报材料及答辩 -->
+  <rect x="520" y="275" width="5" height="20" rx="3" ry="3" fill="#eeca3b" opacity="0.8"/>
+  
+  <!-- 4月4日-4月20日：继续完善系统其他功能 -->
+  <rect x="525" y="315" width="35" height="20" rx="3" ry="3" fill="#b279a2" opacity="0.8"/>
+  
+  <!-- 4月21日-5月31日：系统测试与部署，撰写毕业设计论文 -->
+  <rect x="560" y="355" width="85" height="20" rx="3" ry="3" fill="#ff9da6" opacity="0.8"/>
+  
+  <!-- 图例 -->
+  <rect x="650" y="70" width="12" height="12" fill="#4c78a8" opacity="0.8"/>
+  <text x="670" y="80" font-family="Arial" font-size="10">文献收集</text>
+  
+  <rect x="650" y="90" width="12" height="12" fill="#f58518" opacity="0.8"/>
+  <text x="670" y="100" font-family="Arial" font-size="10">环境搭建</text>
+  
+  <rect x="650" y="110" width="12" height="12" fill="#e45756" opacity="0.8"/>
+  <text x="670" y="120" font-family="Arial" font-size="10">知识图谱</text>
+  
+  <rect x="650" y="130" width="12" height="12" fill="#72b7b2" opacity="0.8"/>
+  <text x="670" y="140" font-family="Arial" font-size="10">问答功能</text>
+  
+  <rect x="650" y="150" width="12" height="12" fill="#54a24b" opacity="0.8"/>
+  <text x="670" y="160" font-family="Arial" font-size="10">记录与可视化</text>
+  
+  <rect x="650" y="170" width="12" height="12" fill="#eeca3b" opacity="0.8"/>
+  <text x="670" y="180" font-family="Arial" font-size="10">中期汇报与答辩</text>
+  
+  <rect x="650" y="190" width="12" height="12" fill="#b279a2" opacity="0.8"/>
+  <text x="670" y="200" font-family="Arial" font-size="10">系统完善</text>
+  
+  <rect x="650" y="210" width="12" height="12" fill="#ff9da6" opacity="0.8"/>
+  <text x="670" y="220" font-family="Arial" font-size="10">测试与论文</text>
+  
+  <!-- 今日标记（2025年4月2日） -->
+  <line x1="522" y1="60" x2="522" y2="350" stroke="#ff0000" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="522" y="375" font-family="Arial" font-size="10" fill="#ff0000" text-anchor="middle">今日</text>
+</svg>

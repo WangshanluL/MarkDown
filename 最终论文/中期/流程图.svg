@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="#f9f9f9" />
+  
+  <!-- 标题 -->
+  <text x="400" y="30" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">知识图谱检索算法(retrieve_knowledge_graph)流程图</text>
+  
+  <!-- 主流程节点 -->
+  <!-- 开始节点 -->
+  <rect x="330" y="60" width="140" height="40" rx="20" ry="20" fill="#4CAF50" stroke="#333" stroke-width="1" />
+  <text x="400" y="85" font-family="Arial" font-size="14" text-anchor="middle" fill="white">开始函数</text>
+  
+  <!-- 初始化节点 -->
+  <rect x="330" y="130" width="140" height="40" rx="5" ry="5" fill="#90CAF9" stroke="#333" stroke-width="1" />
+  <text x="400" y="155" font-family="Arial" font-size="14" text-anchor="middle">初始化数据结构</text>
+  
+  <!-- 并行查询节点 -->
+  <rect x="330" y="200" width="140" height="40" rx="5" ry="5" fill="#90CAF9" stroke="#333" stroke-width="1" />
+  <text x="400" y="225" font-family="Arial" font-size="14" text-anchor="middle">并行执行5类查询</text>
+  
+  <!-- 查询类型 -->
+  <rect x="100" y="270" width="120" height="30" rx="5" ry="5" fill="#FFCC80" stroke="#333" stroke-width="1" />
+  <text x="160" y="290" font-family="Arial" font-size="12" text-anchor="middle">概念节点查询</text>
+  
+  <rect x="240" y="270" width="120" height="30" rx="5" ry="5" fill="#FFCC80" stroke="#333" stroke-width="1" />
+  <text x="300" y="290" font-family="Arial" font-size="12" text-anchor="middle">概念节点父节点查询</text>
+  
+  <rect x="380" y="270" width="120" height="30" rx="5" ry="5" fill="#FFCC80" stroke="#333" stroke-width="1" />
+  <text x="440" y="290" font-family="Arial" font-size="12" text-anchor="middle">父节点下概念查询</text>
+  
+  <rect x="520" y="270" width="120" height="30" rx="5" ry="5" fill="#FFCC80" stroke="#333" stroke-width="1" />
+  <text x="580" y="290" font-family="Arial" font-size="12" text-anchor="middle">题目节点查询</text>
+  
+  <rect x="660" y="270" width="120" height="30" rx="5" ry="5" fill="#FFCC80" stroke="#333" stroke-width="1" />
+  <text x="720" y="290" font-family="Arial" font-size="12" text-anchor="middle">视频节点查询</text>
+  
+  <!-- 收集结果节点 -->
+  <rect x="330" y="340" width="140" height="40" rx="5" ry="5" fill="#90CAF9" stroke="#333" stroke-width="1" />
+  <text x="400" y="365" font-family="Arial" font-size="14" text-anchor="middle">收集查询结果</text>
+  
+  <!-- 构建节点关系 -->
+  <rect x="330" y="410" width="140" height="40" rx="5" ry="5" fill="#90CAF9" stroke="#333" stroke-width="1" />
+  <text x="400" y="435" font-family="Arial" font-size="14" text-anchor="middle">构建节点和关系</text>
+  
+  <!-- 返回结果 -->
+  <rect x="330" y="480" width="140" height="40" rx="5" ry="5" fill="#90CAF9" stroke="#333" stroke-width="1" />
+  <text x="400" y="505" font-family="Arial" font-size="14" text-anchor="middle">返回知识图谱结构</text>
+  
+  <!-- 结束节点 -->
+  <rect x="330" y="550" width="140" height="40" rx="20" ry="20" fill="#F44336" stroke="#333" stroke-width="1" />
+  <text x="400" y="575" font-family="Arial" font-size="14" text-anchor="middle" fill="white">结束函数</text>
+  
+  <!-- 连接线 -->
+  <!-- 主流程连接 -->
+  <line x1="400" y1="100" x2="400" y2="130" stroke="#333" stroke-width="2" />
+  <polygon points="400,130 395,120 405,120" fill="#333" />
+  
+  <line x1="400" y1="170" x2="400" y2="200" stroke="#333" stroke-width="2" />
+  <polygon points="400,200 395,190 405,190" fill="#333" />
+  
+  <line x1="400" y1="240" x2="400" y2="270" stroke="#333" stroke-width="2" />
+  <!-- 扇出线 -->
+  <line x1="400" y1="255" x2="160" y2="270" stroke="#333" stroke-width="1.5" />
+  <polygon points="160,270 170,265 170,275" fill="#333" />
+  
+  <line x1="400" y1="255" x2="300" y2="270" stroke="#333" stroke-width="1.5" />
+  <polygon points="300,270 310,265 310,275" fill="#333" />
+  
+  <line x1="400" y1="255" x2="440" y2="270" stroke="#333" stroke-width="1.5" />
+  <polygon points="440,270 430,265 430,275" fill="#333" />
+  
+  <line x1="400" y1="255" x2="580" y2="270" stroke="#333" stroke-width="1.5" />
+  <polygon points="580,270 570,265 570,275" fill="#333" />
+  
+  <line x1="400" y1="255" x2="720" y2="270" stroke="#333" stroke-width="1.5" />
+  <polygon points="720,270 710,265 710,275" fill="#333" />
+  
+  <!-- 查询到收集结果的连接 -->
+  <line x1="160" y1="300" x2="380" y2="340" stroke="#333" stroke-width="1.5" />
+  <line x1="300" y1="300" x2="380" y2="340" stroke="#333" stroke-width="1.5" />
+  <line x1="440" y1="300" x2="410" y2="340" stroke="#333" stroke-width="1.5" />
+  <line x1="580" y1="300" x2="420" y2="340" stroke="#333" stroke-width="1.5" />
+  <line x1="720" y1="300" x2="420" y2="340" stroke="#333" stroke-width="1.5" />
+
+  
+  <line x1="400" y1="380" x2="400" y2="410" stroke="#333" stroke-width="2" />
+  <polygon points="400,410 395,400 405,400" fill="#333" />
+  
+  <line x1="400" y1="450" x2="400" y2="480" stroke="#333" stroke-width="2" />
+  <polygon points="400,480 395,470 405,470" fill="#333" />
+  
+  <line x1="400" y1="520" x2="400" y2="550" stroke="#333" stroke-width="2" />
+  <polygon points="400,550 395,540 405,540" fill="#333" />
+  
+  <!-- 注释框 -->
+  <rect x="50" y="350" width="200" height="150" rx="5" ry="5" fill="#E1F5FE" stroke="#81D4FA" stroke-width="1" stroke-dasharray="5,5" />
+  <text x="150" y="370" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">节点处理流程:</text>
+  <text x="150" y="395" font-family="Arial" font-size="12" text-anchor="middle">1. 生成唯一标识符</text>
+  <text x="150" y="420" font-family="Arial" font-size="12" text-anchor="middle">2. 添加节点到数组</text>
+  <text x="150" y="445" font-family="Arial" font-size="12" text-anchor="middle">3. 避免节点重复</text>
+  <text x="150" y="470" font-family="Arial" font-size="12" text-anchor="middle">4. 创建节点间链接关系</text>
+  
+  <rect x="550" y="350" width="200" height="150" rx="5" ry="5" fill="#F3E5F5" stroke="#CE93D8" stroke-width="1" stroke-dasharray="5,5" />
+  <text x="650" y="370" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">返回结果包含:</text>
+  <text x="650" y="395" font-family="Arial" font-size="12" text-anchor="middle">1. 节点数组(nodes)</text>
+  <text x="650" y="420" font-family="Arial" font-size="12" text-anchor="middle">2. 链接数组(links)</text>
+  <text x="650" y="445" font-family="Arial" font-size="12" text-anchor="middle">3. 节点属性(name,category等)</text>
+  <text x="650" y="470" font-family="Arial" font-size="12" text-anchor="middle">4. 链接类型(type)</text>
+</svg>

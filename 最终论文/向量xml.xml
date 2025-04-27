@@ -1,0 +1,171 @@
+<mxfile host="app.diagrams.net" modified="2023-04-17T12:00:00.000Z" agent="5.0 (Windows)" etag="your-etag" version="21.0.0" type="device">
+  <diagram id="text-to-vector-similarity" name="文本向量化与相似度计算流程图">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- 标题 -->
+        <mxCell id="title" value="文本向量化与相似度计算流程图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="400" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- 输入部分 -->
+        <mxCell id="user_question" value="&lt;b&gt;用户问题&lt;/b&gt;&lt;br&gt;(原始文本)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="150" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="knowledge_desc" value="&lt;b&gt;知识点描述&lt;/b&gt;&lt;br&gt;(原始文本集合)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="650" y="100" width="150" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- 向量化过程 -->
+        <mxCell id="vectorization_group" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;向量化处理&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fillOpacity=30;dashed=1;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="50" y="230" width="800" height="170" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="question_vectorization" value="&lt;b&gt;问题向量化&lt;/b&gt;&lt;br&gt;预训练向量模型&lt;br&gt;转换为高维向量" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="280" width="150" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="knowledge_vectorization" value="&lt;b&gt;知识点向量化&lt;/b&gt;&lt;br&gt;相同预训练模型&lt;br&gt;批量转换为向量" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="650" y="280" width="150" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="vector_model" value="&lt;b&gt;预训练向量模型&lt;/b&gt;&lt;br&gt;捕捉语义信息" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="375" y="280" width="150" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- 相似度计算 -->
+        <mxCell id="similarity_group" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;向量相似度计算&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fillOpacity=30;dashed=1;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="50" y="450" width="800" height="200" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="cosine_similarity" value="&lt;b&gt;余弦相似度计算&lt;/b&gt;&lt;br&gt;RerankerCompressor&lt;br&gt;base_text_rerank()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="375" y="500" width="150" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- 阈值过滤 -->
+        <mxCell id="threshold_filter" value="&lt;b&gt;相似度阈值过滤&lt;/b&gt;&lt;br&gt;阈值: 0.48&lt;br&gt;筛选高相关度的概念节点" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="250" y="610" width="400" height="85" as="geometry" />
+        </mxCell>
+        
+        <!-- 结果输出 -->
+        <mxCell id="result_output" value="&lt;b&gt;相关概念节点&lt;/b&gt;&lt;br&gt;(提取的结果)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="375" y="720" width="150" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- 连接线 -->
+        <!-- 输入到向量化 -->
+        <mxCell id="conn1" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#6c8ebf;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="user_question" target="question_vectorization">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="190" as="sourcePoint" />
+            <mxPoint x="220" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="conn2" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#82b366;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="knowledge_desc" target="knowledge_vectorization">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="720" y="190" as="sourcePoint" />
+            <mxPoint x="770" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 预训练模型连接 -->
+        <mxCell id="conn3" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#9673a6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="question_vectorization" target="vector_model">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="260" y="330" as="sourcePoint" />
+            <mxPoint x="310" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="conn4" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#9673a6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="vector_model" target="knowledge_vectorization">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530" y="330" as="sourcePoint" />
+            <mxPoint x="580" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 向量到相似度计算 -->
+        <mxCell id="conn5" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#6c8ebf;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="question_vectorization" target="cosine_similarity">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="175" y="370" as="sourcePoint" />
+            <mxPoint x="225" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="175" y="430" />
+              <mxPoint x="375" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="conn6" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#82b366;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="knowledge_vectorization" target="cosine_similarity">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="725" y="370" as="sourcePoint" />
+            <mxPoint x="775" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="725" y="430" />
+              <mxPoint x="525" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 相似度计算到阈值过滤 -->
+        <mxCell id="conn7" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#6c8ebf;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cosine_similarity" target="threshold_filter">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="590" as="sourcePoint" />
+            <mxPoint x="500" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 阈值过滤到结果输出 -->
+        <mxCell id="conn8" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#82b366;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="threshold_filter" target="result_output">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="710" as="sourcePoint" />
+            <mxPoint x="500" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 图例 -->
+        <mxCell id="legend_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="620" width="150" height="115" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_title" value="&lt;b&gt;图例&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="765" y="625" width="60" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_item1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="650" width="20" height="15" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_text1" value="输入/输出" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="755" y="647.5" width="110" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_item2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="675" width="20" height="15" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_text2" value="向量处理" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="755" y="672.5" width="110" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_item3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="700" width="20" height="15" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_text3" value="过滤处理" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="755" y="697.5" width="110" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_item4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="725" width="20" height="15" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_text4" value="计算/模型" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="755" y="722.5" width="110" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

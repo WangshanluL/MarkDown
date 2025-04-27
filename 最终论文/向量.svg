@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 750">
+  <defs>
+    <!-- 箭头定义 -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6c8ebf"/>
+    </marker>
+    <!-- 分组背景 -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="shadow"/>
+      <feOffset dx="2" dy="2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <!-- 标题 -->
+  <text x="450" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">文本向量化与相似度计算流程图</text>
+  
+  <!-- 输入部分 -->
+  <g>
+    <rect x="100" y="100" width="150" height="80" rx="10" ry="10" fill="#dae8fc" stroke="#6c8ebf" stroke-width="2"/>
+    <text x="175" y="130" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">用户问题</text>
+    <text x="175" y="155" font-family="Arial" font-size="12" text-anchor="middle">(原始文本)</text>
+  </g>
+  
+  <g>
+    <rect x="650" y="100" width="150" height="80" rx="10" ry="10" fill="#d5e8d4" stroke="#82b366" stroke-width="2"/>
+    <text x="725" y="130" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">知识点描述</text>
+    <text x="725" y="155" font-family="Arial" font-size="12" text-anchor="middle">(原始文本集合)</text>
+  </g>
+
+  <!-- 向量化过程 -->
+  <g>
+    <rect x="50" y="230" width="800" height="170" rx="10" ry="10" fill="#e1d5e7" fill-opacity="0.3" stroke="#9673a6" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="450" y="250" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">向量化处理</text>
+  </g>
+  
+  <g>
+    <rect x="100" y="280" width="150" height="80" rx="10" ry="10" fill="#e1d5e7" stroke="#9673a6" stroke-width="2"/>
+    <text x="175" y="305" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">问题向量化</text>
+    <text x="175" y="330" font-family="Arial" font-size="12" text-anchor="middle">预训练向量模型</text>
+    <text x="175" y="350" font-family="Arial" font-size="12" text-anchor="middle">转换为高维向量</text>
+  </g>
+  
+  <g>
+    <rect x="650" y="280" width="150" height="80" rx="10" ry="10" fill="#e1d5e7" stroke="#9673a6" stroke-width="2"/>
+    <text x="725" y="305" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">知识点向量化</text>
+    <text x="725" y="330" font-family="Arial" font-size="12" text-anchor="middle">相同预训练模型</text>
+    <text x="725" y="350" font-family="Arial" font-size="12" text-anchor="middle">批量转换为向量</text>
+  </g>
+  
+  <g>
+    <rect x="375" y="280" width="150" height="80" rx="10" ry="10" fill="#ffe6cc" stroke="#d79b00" stroke-width="2"/>
+    <text x="450" y="315" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">预训练向量模型</text>
+    <text x="450" y="335" font-family="Arial" font-size="12" text-anchor="middle">捕捉语义信息</text>
+  </g>
+
+  <!-- 相似度计算 -->
+  <g>
+    <rect x="50" y="450" width="800" height="200" rx="10" ry="10" fill="#dae8fc" fill-opacity="0.3" stroke="#6c8ebf" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="450" y="470" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">向量相似度计算</text>
+  </g>
+  
+  <g>
+    <rect x="375" y="500" width="150" height="80" rx="10" ry="10" fill="#dae8fc" stroke="#6c8ebf" stroke-width="2"/>
+    <text x="450" y="525" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">余弦相似度计算</text>
+    <text x="450" y="550" font-family="Arial" font-size="12" text-anchor="middle">RerankerCompressor</text>
+    <text x="450" y="570" font-family="Arial" font-size="12" text-anchor="middle">base_text_rerank()</text>
+  </g>
+
+  <!-- 阈值过滤 -->
+  <g>
+    <rect x="250" y="610" width="400" height="85" rx="10" ry="10" fill="#d5e8d4" stroke="#82b366" stroke-width="2"/>
+    <text x="450" y="635" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">相似度阈值过滤</text>
+    <text x="450" y="660" font-family="Arial" font-size="12" text-anchor="middle">阈值: 0.48</text>
+    <text x="450" y="680" font-family="Arial" font-size="12" text-anchor="middle">筛选高相关度的概念节点</text>
+  </g>
+
+  <!-- 结果输出 -->
+  <g>
+    <rect x="375" y="720" width="150" height="60" rx="10" ry="10" fill="#ffe6cc" stroke="#d79b00" stroke-width="2"/>
+    <text x="450" y="750" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">相关概念节点</text>
+    <text x="450" y="770" font-family="Arial" font-size="12" text-anchor="middle">(提取的结果)</text>
+  </g>
+
+  <!-- 连接线 -->
+  <!-- 输入到向量化 -->
+  <line x1="175" y1="180" x2="175" y2="280" stroke="#6c8ebf" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="725" y1="180" x2="725" y2="280" stroke="#82b366" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- 预训练模型连接 -->
+  <line x1="250" y1="320" x2="375" y2="320" stroke="#9673a6" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="525" y1="320" x2="650" y2="320" stroke="#9673a6" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- 向量到相似度计算 -->
+  <path d="M 175,360 Q 175,430 375,505" stroke="#6c8ebf" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 725,360 Q 725,430 525,505" stroke="#82b366" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- 相似度计算到阈值过滤 -->
+  <line x1="450" y1="580" x2="450" y2="610" stroke="#6c8ebf" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- 阈值过滤到结果输出 -->
+  <line x1="450" y1="695" x2="450" y2="720" stroke="#82b366" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- 图例 -->
+  <g>
+    <rect x="720" y="620" width="150" height="115" rx="5" ry="5" fill="white" stroke="#666666" stroke-width="1"/>
+    <text x="795" y="640" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">图例</text>
+    
+    <!-- 图例项1 -->
+    <rect x="730" y="650" width="20" height="15" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1"/>
+    <text x="755" y="663" font-family="Arial" font-size="12" x="65">输入/输出</text>
+    
+    <!-- 图例项2 -->
+    <rect x="730" y="675" width="20" height="15" fill="#e1d5e7" stroke="#9673a6" stroke-width="1"/>
+    <text x="755" y="688" font-family="Arial" font-size="12" x="65">向量处理</text>
+    
+    <!-- 图例项3 -->
+    <rect x="730" y="700" width="20" height="15" fill="#d5e8d4" stroke="#82b366" stroke-width="1"/>
+    <text x="755" y="713" font-family="Arial" font-size="12" x="65">过滤处理</text>
+    
+    <!-- 图例项4 -->
+    <rect x="730" y="725" width="20" height="15" fill="#ffe6cc" stroke="#d79b00" stroke-width="1"/>
+    <text x="755" y="738" font-family="Arial" font-size="12" x="65">计算/模型</text>
+  </g>
+</svg>
