@@ -8,6 +8,10 @@ ssh-keygen -t rsa -b 2048 -C "github账户的邮箱地址"
 
 实测还是输入密码吧，输入那个github密码，不知道用不用输入，但是不输会报错
 
+测试过了，以后gitclone和git push 输入密码的时候需要填这个密码，比如我在这个服务器上配置的密码
+
+Digitmaster123
+
 第二步：
 
 查看这个文件：
@@ -42,3 +46,67 @@ g8AcO3KEFFgCt4KjeYTXTxvkerYUzziXAcudlj0phAk2AxKwAAAIEA6qvqc3RqTb7yRiuz
 LtPwHRhpNN00a+vSOk3Tfj/s+uBDSBSseGxLu37ix8Ho/nn27H5Wt8E5/EeYDvEOv/kkHr
 x/d00GqyJmBWncMAAAAWaGl3YW5naGFuc2FuQGdtYWlsLmNvbQECAwQF
 
+
+
+
+
+服务器上github连不上
+
+dns解析有问题，需要找另一个ip地址，也就是输入github.com，找另一个ip地址
+
+![image-20250428110711468](./assets/image-20250428110711468.png)
+
+![image-20250428110737802](./assets/image-20250428110737802.png)
+
+然后把ip地址 + github.com
+
+当访问GitHub的时候就会默认走这个ip地址。
+
+然后重启刷新就可以了
+
+在 Ubuntu 中修改 `/etc/hosts` 文件后，不需要重启整个系统，只需要刷新 DNS 缓存即可使更改生效。你可以使用以下几种方法：
+
+1. 对于使用 systemd-resolved 的现代 Ubuntu 系统（Ubuntu 18.04 及更新版本）：
+
+   ```
+   sudo systemd-resolve --flush-caches
+   ```
+
+2. 对于使用 NetworkManager 的系统：
+
+   ```
+   sudo systemctl restart NetworkManager
+   ```
+
+3. 或者简单地重启网络服务：
+
+   ```
+   sudo systemctl restart networking
+   ```
+
+4. 在某些情况下，你可能还需要清除 nscd 缓存（如果已安装）：
+
+   ```
+   sudo service nscd restart
+   ```
+
+大多数情况下，修改 `/etc/hosts` 文件后更改会立即生效，无需执行任何命令。如果更改没有立即生效，尝试以上命令之一应该可以解决问题。
+
+![image-20250428110824020](./assets/image-20250428110824020.png)
+
+
+
+wsl@hcss-ecs-64dd:~$ git clone git@github.com:ZiHangChuDK/CGG_beta.git
+Cloning into 'CGG_beta'...
+The authenticity of host 'github.com (140.82.116.4)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Enter passphrase for key '/home/wsl/.ssh/id_rsa': 
+remote: Enumerating objects: 788, done.
+remote: Counting objects: 100% (197/197), done.
+remote: Compressing objects: 100% (128/128), done.
+remote: Total 788 (delta 99), reused 135 (delta 67), pack-reused 591 (from 1)
+Receiving objects: 100% (788/788), 308.93 KiB | 541.00 KiB/s, done.
+Resolving deltas: 100% (463/463), done.
